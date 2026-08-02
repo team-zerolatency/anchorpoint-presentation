@@ -46,7 +46,7 @@ export default function Slide03() {
               <div
                 className="flex h-11 w-11 items-center justify-center rounded-[10px]"
                 style={{
-                  backgroundColor: isGold ? 'rgba(250,204,21,0.15)' : 'rgba(192,132,252,0.15)',
+                  backgroundColor: isGold ? 'var(--gold-bg)' : 'var(--purple-bg)',
                   color: isGold ? 'var(--color-gold)' : 'var(--color-purple)',
                 }}
               >

@@ -51,7 +51,7 @@ export default function Slide08() {
                 className="demo-step relative flex items-center justify-between rounded-lg px-4 py-2"
                 style={{
                   backgroundColor: 'var(--color-slide)',
-                  border: `1px solid ${s.gold ? 'rgba(250,204,21,0.4)' : 'var(--color-hairline)'}`,
+                  border: `1px solid ${s.gold ? 'var(--highlight-gold-border)' : 'var(--color-hairline)'}`,
                 }}
               >
                 <span
@@ -83,7 +83,7 @@ export default function Slide08() {
           <div className="flex items-center gap-4">
             <div
               className="flex h-11 w-11 items-center justify-center rounded-xl"
-              style={{ backgroundColor: 'rgba(250,204,21,0.15)', color: 'var(--color-gold)' }}
+              style={{ backgroundColor: 'var(--gold-bg)', color: 'var(--color-gold)' }}
             >
               <Play size={18} />
             </div>

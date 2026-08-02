@@ -6,7 +6,7 @@ import { Circle, Check, Zap } from 'lucide-react'
 import SectionHeader from '@/components/SectionHeader'
 
 const rows = [
-  { rank: '#1', team: 'Team SolanaStrike', wallet: '7x9K...mQ41', score: '96.5 / 100', payout: '3.0 SOL ($450)', color: 'var(--color-gold)', border: 'rgba(250,204,21,0.4)' },
+  { rank: '#1', team: 'Team SolanaStrike', wallet: '7x9K...mQ41', score: '96.5 / 100', payout: '3.0 SOL ($450)', color: 'var(--color-gold)', border: 'var(--highlight-gold-border)' },
   { rank: '#2', team: 'Team CyberVault', wallet: '3m1P...k8L9', score: '92.0 / 100', payout: '1.5 SOL ($225)', color: 'var(--color-purple)', border: 'var(--color-hairline)' },
   { rank: '#3', team: 'Team BlockShield', wallet: '9r4K...pL22', score: '88.5 / 100', payout: '0.5 SOL ($75)', color: 'var(--color-hi)', border: 'var(--color-hairline)' },
 ]
@@ -69,7 +69,7 @@ export default function Slide07() {
           <div className="flex items-center gap-4">
             <div
               className="flex h-10 w-10 items-center justify-center rounded-full"
-              style={{ backgroundColor: 'rgba(34,197,94,0.15)', color: 'var(--color-success)' }}
+              style={{ backgroundColor: 'var(--success-bg)', color: 'var(--color-success)' }}
             >
               <Check size={18} />
             </div>

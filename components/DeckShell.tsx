@@ -69,22 +69,24 @@ export default function DeckShell({ slides }: { slides: React.ComponentType[] })
       <div
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
-        className="relative h-screen w-full overflow-hidden bg-canvas text-zinc-900 dark:text-white"
-        style={{ backgroundColor: 'var(--color-canvas)' }}
+        className="relative h-screen w-full overflow-hidden"
+        style={{ backgroundColor: 'var(--color-canvas)', color: 'var(--color-hi)' }}
       >
         {/* Top-right controls */}
         <div className="fixed right-6 top-6 z-50 flex gap-3">
           <button
             onClick={toggleTheme}
             aria-label="Toggle theme"
-            className="rounded-full border border-zinc-300 bg-white/80 p-2.5 backdrop-blur transition hover:scale-105 dark:border-zinc-700 dark:bg-zinc-900/80"
+            className="rounded-full p-2.5 backdrop-blur transition-all duration-300 hover:scale-105"
+            style={{ border: '1px solid var(--color-hairline)', backgroundColor: 'var(--panel-alpha)', color: 'var(--color-hi)' }}
           >
             {mounted && (theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />)}
           </button>
           <button
             onClick={toggleFullscreen}
             aria-label="Toggle fullscreen"
-            className="rounded-full border border-zinc-300 bg-white/80 p-2.5 backdrop-blur transition hover:scale-105 dark:border-zinc-700 dark:bg-zinc-900/80"
+            className="rounded-full p-2.5 backdrop-blur transition-all duration-300 hover:scale-105"
+            style={{ border: '1px solid var(--color-hairline)', backgroundColor: 'var(--panel-alpha)', color: 'var(--color-hi)' }}
           >
             {isFullscreen ? <Minimize size={18} /> : <Maximize size={18} />}
           </button>
@@ -111,7 +113,8 @@ export default function DeckShell({ slides }: { slides: React.ComponentType[] })
             onClick={() => goTo(index - 1)}
             disabled={index === 0}
             aria-label="Previous slide"
-            className="rounded-full border border-zinc-300 bg-white/80 p-2 backdrop-blur transition hover:scale-105 disabled:opacity-30 dark:border-zinc-700 dark:bg-zinc-900/80"
+            className="rounded-full p-2 backdrop-blur transition-all duration-300 hover:scale-105 disabled:opacity-30"
+            style={{ border: '1px solid var(--color-hairline)', backgroundColor: 'var(--panel-alpha)', color: 'var(--color-hi)' }}
           >
             <ChevronLeft size={18} />
           </button>
@@ -124,9 +127,14 @@ export default function DeckShell({ slides }: { slides: React.ComponentType[] })
                 aria-label={`Go to slide ${i + 1}`}
                 className={`h-1.5 rounded-full transition-all duration-300 ${
                   i === index
-                    ? 'w-6 bg-linear-to-l from-purple-400 to-yellow-400'
-                    : 'w-1.5 bg-zinc-400/50'
+                    ? 'w-6'
+                    : 'w-1.5'
                 }`}
+                style={{
+                  background: i === index
+                    ? 'linear-gradient(to left, var(--color-purple), var(--color-gold))'
+                    : 'var(--color-hairline)',
+                }}
               />
             ))}
           </div>
@@ -135,7 +143,8 @@ export default function DeckShell({ slides }: { slides: React.ComponentType[] })
             onClick={() => goTo(index + 1)}
             disabled={index === slides.length - 1}
             aria-label="Next slide"
-            className="rounded-full border border-zinc-300 bg-white/80 p-2 backdrop-blur transition hover:scale-105 disabled:opacity-30 dark:border-zinc-700 dark:bg-zinc-900/80"
+            className="rounded-full p-2 backdrop-blur transition-all duration-300 hover:scale-105 disabled:opacity-30"
+            style={{ border: '1px solid var(--color-hairline)', backgroundColor: 'var(--panel-alpha)', color: 'var(--color-hi)' }}
           >
             <ChevronRight size={18} />
           </button>

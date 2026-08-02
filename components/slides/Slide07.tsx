@@ -46,7 +46,7 @@ export default function Slide07() {
               <div
                 className="flex h-12 w-12 items-center justify-center rounded-xl"
                 style={{
-                  backgroundColor: isGold ? 'rgba(250,204,21,0.15)' : 'rgba(192,132,252,0.15)',
+                  backgroundColor: isGold ? 'var(--gold-bg)' : 'var(--purple-bg)',
                   color: isGold ? 'var(--color-gold)' : 'var(--color-purple)',
                 }}
               >

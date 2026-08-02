@@ -40,7 +40,7 @@ export default function Slide02() {
           >
             <div
               className="flex h-11 w-11 items-center justify-center rounded-[10px]"
-              style={{ backgroundColor: 'rgba(239,68,68,0.15)', color: 'var(--color-danger)' }}
+              style={{ backgroundColor: 'var(--danger-bg)', color: 'var(--color-danger)' }}
             >
               <p.icon size={20} />
             </div>
