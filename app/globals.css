@@ -1,0 +1,190 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-canvas: #05030a;
+  --color-slide: #0a0714;
+  --color-panel: #16101f;
+  --color-hairline: #2a1f3d;
+  --color-purple: #c084fc;
+  --color-gold: #facc15;
+  --color-hi: #f4f1fa;
+  --color-lo: #9a8fb0;
+  --color-danger: #f87171;
+  --color-success: #22c55e;
+
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-hi);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--color-hi);
+}
+
+/* ---- Reusable slide-building blocks, ported 1:1 from the reference deck ---- */
+
+.slide-card {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-slide);
+  position: relative;
+  overflow: hidden;
+  padding: 56px 72px;
+  display: flex;
+  flex-direction: column;
+}
+
+.slide-card::before {
+  content: "";
+  position: absolute;
+  top: -180px;
+  left: -180px;
+  width: 560px;
+  height: 560px;
+  background: radial-gradient(circle, rgba(192, 132, 252, 0.18) 0%, rgba(10, 7, 20, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.slide-card::after {
+  content: "";
+  position: absolute;
+  bottom: -180px;
+  right: -180px;
+  width: 560px;
+  height: 560px;
+  background: radial-gradient(circle, rgba(250, 204, 21, 0.14) 0%, rgba(10, 7, 20, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.slide-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--color-panel);
+  border: 1px solid var(--color-hairline);
+  color: var(--color-gold);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 9999px;
+}
+
+.tile-card {
+  background-color: var(--color-panel);
+  border: 1px solid var(--color-hairline);
+  border-radius: 14px;
+  padding: 24px;
+}
+
+.tile-card.highlight-purple {
+  border-color: rgba(192, 132, 252, 0.4);
+  box-shadow: 0 4px 20px rgba(192, 132, 252, 0.08);
+}
+
+.tile-card.highlight-gold {
+  border-color: rgba(250, 204, 21, 0.4);
+  box-shadow: 0 4px 20px rgba(250, 204, 21, 0.08);
+}
+
+.tile-card.highlight-red {
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.code-badge {
+  font-family: var(--font-mono);
+  background-color: var(--color-slide);
+  border: 1px solid var(--color-hairline);
+  color: var(--color-purple);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mono-text {
+  font-family: var(--font-mono);
+}
+
+.bullet-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 0;
+  margin: 0;
+}
+
+.bullet-list li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-lo);
+}
+
+.bullet-list li strong {
+  color: var(--color-hi);
+}
+
+.bullet-list li svg {
+  position: absolute;
+  left: 0;
+  top: 2px;
+}
+
+/* ---- The section header pill — matches the reference screenshot ---- */
+
+.section-header {
+  display: block;
+  width: 100%;
+  border-radius: 24px;
+  background-color: rgba(22, 16, 31, 0.6);
+  border: 1px solid rgba(192, 132, 252, 0.3);
+  box-shadow: 0 0 40px rgba(192, 132, 252, 0.08);
+  padding: 26px 40px;
+  margin-bottom: 40px;
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.section-header .index {
+  color: var(--color-hi);
+}
+
+.section-header .accent {
+  color: var(--color-purple);
+}
+
+.section-header .gold {
+  color: var(--color-gold);
+}
