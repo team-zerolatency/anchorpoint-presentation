@@ -8,7 +8,7 @@ export default function Slide01() {
   return (
     <section className="slide-card items-center justify-center text-center">
       <motion.div variants={fadeUp} initial="hidden" animate="show" custom={0} className="pill-badge mb-6">
-        <Box size={14} /> AlgOlympia 2026 &middot; TrustChain Track &middot; Solana Network
+        <Box size={14} /> IDEATHON 2026 &middot; TrustChain Track &middot; Solana Network
       </motion.div>
 
       <motion.h1
