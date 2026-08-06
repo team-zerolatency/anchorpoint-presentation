@@ -32,7 +32,7 @@ export default function Slide08() {
 
   return (
     <section ref={containerRef} className="slide-card justify-center">
-      <SectionHeader index="07" label="LIVE DEMO" accent="Execution Walkthrough" />
+      <SectionHeader index="07" label="END USER" accent="Execution Walkthrough" />
 
       <div className="flex flex-col gap-4">
         <div className="tile-card px-7 py-5">
